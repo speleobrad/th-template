@@ -1,0 +1,27 @@
+encoding  iso8859-2
+#
+# <CAVE NAME>.
+#
+# CC BY-NC-SA 4.0 
+# https://creativecommons.org/licenses/by-nc-sa/4.0/
+#
+ 
+# == Name of survey and title of the generated documents
+survey cave_name -title "Cave name" 
+
+  # == Add your survey pieces. repeat as many times as needed
+  # input surveys/file_name
+    
+  centerline
+    walls auto
+    
+    # == In case you are splicing surveys
+    # equate 1@survey1     1@survey2
+    
+  endcenterline
+  
+  # == Your maps go here. 
+  #input main.th2
+
+endsurvey
+

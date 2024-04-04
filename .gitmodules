@@ -1,0 +1,4 @@
+[submodule "layouts"]
+	path = layouts
+	url = https://github.com/speleobrad/therion-layouts.git
+	branch = main

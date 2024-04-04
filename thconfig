@@ -1,0 +1,21 @@
+encoding  utf-8
+#
+# <CAVE NAME HERE> 
+#
+# CC BY-NC-SA 4.0 
+# https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+source main
+input therion-layouts/speleobrad.layout
+
+
+export map   -o output/plan.pdf           -layout speleobrad -projection plan
+export map   -o output/profile.pdf        -layout speleobrad -projection extended
+
+export atlas -o output/atlas-plan.pdf     -layout speleobrad -projection plan
+export atlas -o output/atlas-profile.pdf  -layout speleobrad -projection extended
+
+export model -o output/model.lox
+
+export map -projection plan     -output output/plan.xvi
+export map -projection extended -output output/profile.xvi

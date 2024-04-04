@@ -1,0 +1,4 @@
+output/*.pdf
+output/*.xvi
+output/*.lox
+*.log
