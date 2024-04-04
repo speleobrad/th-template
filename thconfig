@@ -6,7 +6,7 @@ encoding  utf-8
 # https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 source main
-input therion-layouts/speleobrad.layout
+input layouts/speleobrad.layout
 
 
 export map   -o output/plan.pdf           -layout speleobrad -projection plan
