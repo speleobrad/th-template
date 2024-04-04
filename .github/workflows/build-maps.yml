@@ -1,0 +1,43 @@
+#
+# GitHub action to build cave maps and publish them to GitHub page of this repo.
+#
+# CC BY-NC-SA 4.0
+# https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+name: Compile maps using Therion 
+# Controls when the workflow will run
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]  
+  workflow_dispatch:
+
+
+jobs: 
+  build: 
+    name: Build Therion maps
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+    steps: 
+      - name: Checkout Therion surveys
+        uses: actions/checkout@v3
+        with:
+          submodules: 'true'
+
+      # Runs a single command using the runners shell
+      - name: Build with Therion
+        uses: matteopic/therion-container@6.2.0
+        with:
+          thconfig: 'thconfig'
+
+      - name: Upload artifact to GitHub pages
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: 'output'
+  
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
