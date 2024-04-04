@@ -5,7 +5,9 @@ Template for Therion surveys.
 # How to use 
 1. Create a new repo, pointing to this one as a template. 
 2. Enable GitHub pages (From actions) for the repo. 
-3. Clone it to your PC.
+3. Clone it to your laptop with submodules `git clone --recurse-submodules ...`
+or
+3. Clone regularly, and then `git submodule update --init` after you are done.
 4. Run `git submodule update --remote --merge` to get the latest layout
  -- repeat this step once in a while to pull new layouts 
 5. Edit `main.th` and take it from there. 
